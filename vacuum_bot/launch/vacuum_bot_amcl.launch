@@ -1,0 +1,21 @@
+<!-- Launches map_server & amcl -->
+
+<launch>
+  <!-- Map server -->
+  <arg name="map_file" value="$(find vacuum_bot)/map/hotel_room_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL used for localization -->
+    <include file="$(find vacuum_bot)/launch/include/amcl.launch.xml" />
+    
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find vacuum_bot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find vacuum_bot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />   
+    <rosparam file="$(find vacuum_bot)/config/local_costmap_params.yaml" command="load" />   
+    <rosparam file="$(find vacuum_bot)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find vacuum_bot)/config/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find vacuum_bot)/config/move_base_params.yaml" command="load" />
+    <rosparam file="$(find vacuum_bot)/config/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find vacuum_bot)/config/navfn_global_planner_params.yaml" command="load" />
+    </node>
+</launch>
