@@ -142,7 +142,7 @@ With all of the above steps, we finish the installation of the Arduino IDE and t
 
 ![Vacuum_Bot_Final_View](https://github.com/atacanguzelkaya/Smart_Vacuum_Bot/blob/c1a60c6aa183407fc15d0f8778912aeb5c57d0e1/vacuum_bot/Charts%20and%20Pictures/Vacuum_Bot.png)
 
-#REFERANCES
+# REFERANCES
 
 $ Dragos Calin, April 15, 2020, https://www.intorobotics.com/how-to-install-ros-melodic-rosserial-and-more-on-raspberry-pi-4-raspbian-buster/
 
